@@ -1,0 +1,19 @@
+---
+name: last-built
+
+on:
+  workflow_dispatch:
+    inputs:
+      dummy:
+        description: 'Dummy'
+        required: true
+
+jobs:
+  last-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Optick-Labs/last-successful-build-action@master
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          branch: "master"
+          workflow: "Trigger-By-Commit"

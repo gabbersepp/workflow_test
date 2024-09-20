@@ -1,0 +1,17 @@
+---
+name: Trigger-By-Commit
+#
+on:
+  workflow_dispatch: { }
+  push:
+    branches:
+      - "**"
+    paths:
+      - "*/**"
+
+jobs:
+  echo-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Test"

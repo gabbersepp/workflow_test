@@ -1,0 +1,21 @@
+---
+name: Test
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - "**"
+    paths:
+      - "*/**"
+
+jobs:
+  matrix_job:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        version: [12, 14, 16]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo  ${{ matrix.os }}
+      - run: echo  ${{ matrix.version }}
