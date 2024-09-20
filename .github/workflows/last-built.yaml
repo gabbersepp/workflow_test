@@ -18,10 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: gabbersepp/last-successful-build-action@master
+        id: build
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: "master"
           workflow: "always-failing"
           fallbackToEarliestSha: ${{inputs.dummy}}
           job: "asda"
+      - id: echo
+        run: |
+          SHA=$(echo ${{ steps.build.outputs.sha }})
+          echo "sha=${SHA:0:8}"
           
