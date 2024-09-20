@@ -21,6 +21,6 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: "master"
-          workflow: "always-failing"
-          job: ${{inputs.dummy}}
+          workflow: "always-failing-2"
+          fallbackToEarliestSha: ${{inputs.dummy}}
           
