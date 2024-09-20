@@ -16,4 +16,5 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: "master"
-          workflow: "Trigger-By-Commit"
+          workflow: "Wf-With-Matrix"
+          job: ${{inputs.dummy}}
