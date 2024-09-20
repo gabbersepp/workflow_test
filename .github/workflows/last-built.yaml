@@ -7,6 +7,11 @@ on:
       dummy:
         description: 'Dummy'
         required: false
+  push:
+    branches:
+      - "**"
+    paths:
+      - "*/**"
 
 jobs:
   last-commit:
@@ -18,3 +23,4 @@ jobs:
           branch: "master"
           workflow: "always-failing"
           job: ${{inputs.dummy}}
+          
