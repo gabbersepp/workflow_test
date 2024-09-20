@@ -6,7 +6,7 @@ on:
     inputs:
       dummy:
         description: 'Dummy'
-        required: true
+        required: false
 
 jobs:
   last-commit:
