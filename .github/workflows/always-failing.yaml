@@ -1,0 +1,15 @@
+---
+name: always-failing
+
+on:
+  push:
+    branches:
+      - "**"
+    paths:
+      - "*/**"
+
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit -1

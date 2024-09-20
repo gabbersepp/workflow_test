@@ -16,5 +16,5 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
           branch: "master"
-          workflow: "Wf-With-Matrix"
+          workflow: "always-failing"
           job: ${{inputs.dummy}}
