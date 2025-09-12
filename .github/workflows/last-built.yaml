@@ -24,7 +24,7 @@ jobs:
           branch: "master"
           workflow: "always-failing"
           fallbackToEarliestSha: ${{inputs.dummy}}
-          job: "asda"
+          job: "fail"
       - id: echo
         run: |
           SHA=$(echo ${{ steps.build.outputs.sha }})
